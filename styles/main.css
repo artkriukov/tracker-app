@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+  background-color: #F3F6FD;
+}
+
+.app {
+  display: flex;
+}
+
+.panel {
+  background-color: #FBFAFF;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu__list {
+  display: flex; 
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu__item {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__item:hover{
+  background-color: #6A6AFB;
+}
+
+.menu__item:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.menu__item_active {
+  background-color: #5051F9;
+}
+
+.menu__item_active img {
+  filter: brightness(0) invert(1);
+}
+
+.content {
+  min-width: 900px;
+  padding: 45px;
+}
+
+header { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1;
+  color:#000000;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 235px;
+}
+
+.progress__text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress__name {
+  font-size: 14px;
+  color: #232360;
+}
+
+.progress__percent {
+  font-size: 12px;
+  color: #768396;
+}
+
+.progress__bar {
+  width: 100%;
+  background-color: #E6E9ED;
+  border-radius: 4px;
+  height: 5px;
+  position: relative;
+}
+
+.progress__cover-bar {
+  position: absolute;
+  width: 50%;
+  border-radius: 4px;
+  height: 5px;
+  background-color: #5051F9;
+}
+
+main {
+  margin-top: 30px;
+}
+
+.habbit {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.habbit__day {
+  min-width: 150px;
+  background-color: #FBFAFF;
+  border-radius: 10px 0 0 10px;
+  border-right: 1px solid #E7EBFB;
+  padding: 20px 40px;
+}
+
+.habbit__comment {
+  font-size: 14px;
+  padding: 20px 25px;
+}
+
+.habbit__delete {
+  margin-left: auto;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.habbit__delete:hover {
+  background-color: #EFF2FF;
+}
+
+.habbit__form {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding: 0 10px 0 25px;
+  position: relative;
+}
+
+input {
+  background-color: #FFFFFF;
+  border: 1px solid #E7EBFB;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-family: "Comfortaa", sans-serif;
+  flex: 1;
+}
+
+input::placeholder {
+  color: #8899A8;
+}
+
+.input_icon {
+  padding-left: 45px;
+}
+
+.input__icon {
+  position: absolute;
+  top: 8px;
+  left: 45px;
+}
+
+.button {
+  border: none;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 14px;
+  background-color: #EDECFE;
+  color: #5051F9;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #dcdaff;
+}
