@@ -20,6 +20,7 @@ let habbits = [
   },
 ];
 const HABBIT_KEY = "HABBIT_KEY";
+let globalActiveHabbitId;
 
 const page = {
   menu: document.querySelector(".menu__list"),
@@ -115,7 +116,33 @@ function rerenderBody(activeHabbit) {
   page.body.nextDay.innerText = `День ${comments.length + 1}`
 }
 
+function addDays(event) {
+  const form = event.target
+  event.preventDefault()
+  const data = new FormData(form)
+  const comment = data.get('comment')
+  form['comment'].classList.remove('error')
+  if (!comment) {
+    form['comment'].classList.add('error')
+  }
+
+  habbits = habbits.map((habbit) => {
+    if(habbit.id === globalActiveHabbitId) {
+      return {
+        ...habbit,
+        days: habbit.days.concat([{ comment }])
+      }
+    }
+    return habbit
+  })
+
+  form['comment'].value = ''
+  rerender(globalActiveHabbitId)
+  saveData()
+}
+
 function rerender(activeHabbitId) {
+  globalActiveHabbitId = activeHabbitId
   const activeHabbit = habbits.find((h) => h.id === activeHabbitId);
   rerenderMenu(activeHabbit);
   rerenderHeader(activeHabbit);
