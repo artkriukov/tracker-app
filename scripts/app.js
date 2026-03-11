@@ -222,7 +222,8 @@ function setIcon(context, icon) {
 
 function rerender(activeHabbitId) {
   globalActiveHabbitId = activeHabbitId
-  const activeHabbit = habbits.find((h) => h.id === activeHabbitId);
+  const activeHabbit = habbits.find((h) => h.id === activeHabbitId)
+  document.location.replace(document.location.pathname + '#' + activeHabbitId)
   rerenderMenu(activeHabbit);
   rerenderHeader(activeHabbit);
   rerenderBody(activeHabbit);
@@ -230,6 +231,12 @@ function rerender(activeHabbitId) {
 
 // init
 (() => {
-  loadData();
-  rerender(habbits[0].id);
-})();
+	loadData();
+	const hashId = Number(document.location.hash.replace('#', ''));
+	const urlHabbit = habbits.find(habbit => habbit.id == hashId);
+	if (urlHabbit) {
+		rerender(urlHabbit.id);
+	} else {
+		rerender(habbits[0].id);
+	}
+})()
