@@ -33,6 +33,9 @@ const page = {
     daysContainer: document.getElementById("days"),
     nextDay: document.querySelector('.next__day')
   },
+  popup: {
+    index: document.getElementById('add-habbit-popup')
+  }
 };
 
 // utils
@@ -154,6 +157,10 @@ function deleteDay(index) {
   })
   rerender(globalActiveHabbitId)
   saveData()
+}
+
+function togglePopup() {
+  page.popup.index.classList.toggle("cover_hidden")
 }
 
 function rerender(activeHabbitId) {
